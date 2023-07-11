@@ -3,6 +3,7 @@ package com.example.maven_restapi.service.logic;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.maven_restapi.entity.User;
 import com.example.maven_restapi.service.UserService;
@@ -14,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 // RequiredArgsConstructor Annotation 이용
 // userStore 가 final 이므로 반드시 초기화해야 함
 
+@Service
 @RequiredArgsConstructor
 public class UserServiceLogic implements UserService {
 
@@ -39,32 +41,27 @@ public class UserServiceLogic implements UserService {
 
   @Override
   public String register(User newUser) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'register'");
+    return this.userStore.create(newUser);
   }
 
   @Override
   public void modify(User newUser) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'modify'");
+    this.userStore.update(newUser);
   }
 
   @Override
   public void remove(String id) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'remove'");
+    this.userStore.delete(id);
   }
 
   @Override
   public User find(String id) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'find'");
+    return this.userStore.retrieve(id);
   }
 
   @Override
   public List<User> findAll() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    return this.userStore.retrieveAll();
   }
   
 }
