@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 public class UserServiceLogic implements UserService {
 
   // 3. Lombok 주입
-  // 이 형태의 Field 만 있어도 자동으로 주입이 됨
+  // 이 형태의 Field 만 있어도 자동으로 주입이 됨 (final)
   private final UserStore userStore;
 
   // 1. AutoWired Annotation 으로 지정 시, UserStore 의 구현 Class 찾음
