@@ -1,5 +1,7 @@
 package com.example.maven_restapi.demo;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,6 +16,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 class DemoApplicationTests {
 	@Autowired
 	private UserService userService;
+
+	@BeforeEach
+	public void startUp() {
+
+	}
 	
 	@Test
 	public void registerTest() {
@@ -23,4 +30,13 @@ class DemoApplicationTests {
 		assertThat(this.userService.register(sample)).isEqualTo(1);
 	}
 
+	@Test
+	public void find() {
+
+	}
+
+	@AfterEach
+	public void cleanUp() {
+		
+	}
 }
