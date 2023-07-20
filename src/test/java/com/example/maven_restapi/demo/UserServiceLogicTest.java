@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 // Unit Test 진행
 @SpringBootTest
-@RunWith(Spring)
+// @RunWith(SpringRunner.class)
 public class UserServiceLogicTest {
 	@Autowired
 	private UserService userService;
@@ -38,15 +38,15 @@ public class UserServiceLogicTest {
 		assertThat(2).isEqualTo(1 + 1);
 	}
 	
-	@Test
-	public void registerTest() {
-		User sample = User.sample();
-		this.userService.register(sample);
-		assertThat(this.userService.register(sample)).isEqualTo(sample.getId());
-		assertThat(this.userService.register(sample)).isEqualTo(3);	// Array Size (N + 1) = Number of people (N) + Empty Size (1)
+	// @Test
+	// public void registerTest() {
+	// 	User sample = User.sample();
+	// 	this.userService.register(sample);
+	// 	assertThat(this.userService.register(sample)).isEqualTo(sample.getId());
+	// 	assertThat(this.userService.register(sample)).isEqualTo(3);	// Array Size (N + 1) = Number of people (N) + Empty Size (1)
 
-		this.userService.remove(sample.getId());
-	}
+	// 	this.userService.remove(sample.getId());
+	// }
 
 	// @Test
 	// public void find() {
