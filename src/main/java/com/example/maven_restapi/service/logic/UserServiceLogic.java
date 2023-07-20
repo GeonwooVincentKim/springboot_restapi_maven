@@ -2,12 +2,14 @@ package com.example.maven_restapi.service.logic;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.maven_restapi.entity.User;
 import com.example.maven_restapi.service.UserService;
 import com.example.maven_restapi.store.UserStore;
+
+// import jakarta.transaction.Transactional;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,9 +17,11 @@ import lombok.RequiredArgsConstructor;
 // RequiredArgsConstructor Annotation 이용
 // userStore 가 final 이므로 반드시 초기화해야 함
 
+// @Service("UserServiceLogic")
+// @Transactional
 @Service
 @RequiredArgsConstructor
-public class UserServiceLogic implements UserService {
+public class UserServiceLogic {
 
   // 3. Lombok 주입
   // 이 형태의 Field 만 있어도 자동으로 주입이 됨 (final)
@@ -37,31 +41,30 @@ public class UserServiceLogic implements UserService {
   // public UserServiceLogic(UserStore userStore) {
   //   this.userStore = userStore;
   // }
-  
 
-  @Override
-  public String register(User newUser) {
-    return this.userStore.create(newUser);
-  }
+  // @Override
+  // public String register(User newUser) {
+  //   return this.userStore.create(newUser);
+  // }
 
-  @Override
-  public void modify(User newUser) {
-    this.userStore.update(newUser);
-  }
+  // @Override
+  // public void modify(User newUser) {
+  //   this.userStore.update(newUser);
+  // }
 
-  @Override
-  public void remove(String id) {
-    this.userStore.delete(id);
-  }
+  // @Override
+  // public void remove(String id) {
+  //   this.userStore.delete(id);
+  // }
 
-  @Override
-  public User find(String id) {
-    return this.userStore.retrieve(id);
-  }
+  // @Override
+  // public User find(String id) {
+  //   return this.userStore.retrieve(id);
+  // }
 
-  @Override
-  public List<User> findAll() {
-    return this.userStore.retrieveAll();
-  }
+  // @Override
+  // public List<User> findAll() {
+  //   return this.userStore.retrieveAll();
+  // }
   
 }
